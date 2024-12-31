@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-mdb-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -7,9 +7,9 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Material Design for Bootstrap</title>
-    <!-- MDB icon -->
-    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <title>Linux Lab</title>
+    <!-- Linux icon -->
+    <link rel="icon" href="./logos/home-48.png" type="image/x-icon" />
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -23,8 +23,80 @@
     <!-- MDB -->
     <link rel="stylesheet" href="css/mdb.min.css" />
   </head>
+
   <body>
     <!-- Start your project here-->
+    <!--Main Navigation-->
+    <header>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+          <!-- Toggle button -->
+          <button
+            data-mdb-collapse-init
+            class="navbar-toggler"
+            type="button"
+            data-mdb-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+
+          <!-- Collapsible wrapper -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Navbar brand -->
+            <a
+              class="navbar-brand mt-2 mt-lg-0"
+              href="https://dashboard.linuxlab.work/"
+              target="_blank"
+            >
+              <img
+                src="./logos/linux-64.png"
+                height="24"
+                alt="Linux Logo"
+                loading="lazy"
+              />
+            </a>
+            <!-- Left links -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="https://navidrome.linuxlab.work/"
+                  target="_blank"
+                  >Navidrome</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="https://searxng.linuxlab.work/"
+                  target="_blank"
+                  >SearXNG</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="https://vaultwarden.linuxlab.work/"
+                  target="_blank"
+                  >VaultWarden</a
+                >
+              </li>
+            </ul>
+            <!-- Left links -->
+          </div>
+          <!-- Collapsible wrapper -->
+          <!-- Right elements -->
+        </div>
+        <!-- Container wrapper -->
+      </nav>
+      <!-- Navbar -->
+    </header>
+    <!--Main Navigation-->
     <!-- End your project here-->
     <!-- MDB -->
     <script type="text/javascript" src="js/mdb.umd.min.js"></script>
