@@ -1,0 +1,100 @@
+/* Nord Theme Colors */
+:root {
+  --nord0: #2e3440;
+  --nord1: #3b4252;
+  --nord2: #434c5e;
+  --nord3: #4c566a;
+  --nord4: #d8dee9;
+  --nord5: #e5e9f0;
+  --nord6: #eceff4;
+  --nord7: #8fbcbb;
+  --nord8: #88c0d0;
+  --nord9: #81a1c1;
+  --nord10: #5e81ac;
+  --nord11: #bf616a;
+  --nord12: #d08770;
+  --nord13: #ebcb8b;
+  --nord14: #a3be8c;
+  --nord15: #b48ead;
+}
+
+/* General Styling */
+body {
+  margin: 0;
+  padding: 2rem;
+  font-family: "Fira Code", monospace;
+  background-color: var(--nord0);
+  color: var(--nord4);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--nord8);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header h1 {
+  color: var(--nord8);
+  font-size: 2.5rem;
+}
+
+header p {
+  color: var(--nord6);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Terminal Box */
+.terminal-box {
+  background-color: var(--nord1);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: var(--nord6);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  overflow-x: auto;
+}
+
+.terminal-box code {
+  white-space: pre-wrap;
+  display: block;
+  color: var(--nord7);
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+h2 {
+  color: var(--nord9);
+  border-bottom: 2px solid var(--nord3);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+  margin-top: 3rem;
+  text-align: center;
+  color: var(--nord3);
+}
+
+/* Toggle Button (Optional) */
+#theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--nord3);
+  color: var(--nord6);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+#theme-toggle:hover {
+  background-color: var(--nord2);
+}

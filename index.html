@@ -1,114 +1,89 @@
 <!doctype html>
-<html lang="en" data-mdb-theme="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Linux Lab</title>
-    <!-- Linux icon -->
-    <link rel="icon" href="./logos/home-48.png" type="image/x-icon" />
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <!-- Google Fonts Roboto -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
-    />
-    <!-- MDB -->
-    <link rel="stylesheet" href="css/mdb.min.css" />
-  </head>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Indyleo's Portfolio</title>
+    <link rel="icon" href="logos/linux-64.png" type="image/png" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="theme-toggle.js"></script>
   <body>
-    <!-- Start your project here-->
-    <!--Main Navigation-->
     <header>
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <!-- Container wrapper -->
-        <div class="container-fluid">
-          <!-- Toggle button -->
-          <button
-            data-mdb-collapse-init
-            class="navbar-toggler"
-            type="button"
-            data-mdb-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <i class="fas fa-bars"></i>
-          </button>
-
-          <!-- Collapsible wrapper -->
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Navbar brand -->
-            <a
-              class="navbar-brand mt-2 mt-lg-0"
-              href="https://github.com/indyleo/"
-              target="_blank"
-            >
-              <img
-                src="./logos/linux-64.png"
-                height="24"
-                alt="Linux Logo"
-                loading="lazy"
-              />
-            </a>
-            <!-- Left links -->
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="https://navidrome.linuxlab.work/"
-                  target="_blank"
-                  >Navidrome</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="https://searxng.linuxlab.work/"
-                  target="_blank"
-                  >SearXNG</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="https://vaultwarden.linuxlab.work/"
-                  target="_blank"
-                  >VaultWarden</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="https://photos.linuxlab.work/"
-                  target="_blank"
-                  >Immrich</a
-                >
-              </li>
-            </ul>
-            <!-- Left links -->
-          </div>
-          <!-- Collapsible wrapper -->
-          <!-- Right elements -->
-        </div>
-        <!-- Container wrapper -->
-      </nav>
-      <!-- Navbar -->
+      <h1>Hi, I'm Indyleo!</h1>
+      <p>Always Learning | Backend Developer | Tinkerer</p>
     </header>
-    <!--Main Navigation-->
-    <!-- End your project here-->
-    <!-- MDB -->
-    <script type="text/javascript" src="js/mdb.umd.min.js"></script>
-    <!-- Custom scripts -->
-    <script type="text/javascript"></script>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="terminal-box">
+        <pre><code>$ whoami
+indyleo
+
+$ uname -a
+Linux-first (Arch/Debian), also works with Windows
+
+$ cat ~/languages.txt
+Go
+Python
+Lua
+Shell
+PowerShell
+Web Languages
+C/C++
+Zig
+
+$ echo "Exploring..."
+Keyboards, workflows, tools, and home servers
+
+$ dotfiles > everything.txt
+true</code></pre>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li>
+          <a href="https://github.com/indyleo/kdedots">My KDE Setup</a> –
+          Tweaked for performance and aesthetics
+        </li>
+        <li>
+          <a href="https://github.com/indyleo/scripts">Tool Scripts</a> – Shell
+          & PowerShell scripts to simplify life
+        </li>
+        <li>
+          <a href="https://github.com/indyleo/WindowsStuff">My Windows Setup</a>
+          – Customized, clean environment
+        </li>
+        <li>
+          <a href="https://github.com/indyleo/Wallpapers">Wallpapers</a> –
+          Curated Nord-themed wallpaper collection
+        </li>
+      </ul>
+    </section>
+
+    <section id="connect">
+      <h2>Connect With Me</h2>
+      <ul>
+        <li>
+          <strong>Reddit:</strong>
+          <a href="https://www.reddit.com/user/AnnonRU">u/AnnonRU</a>
+        </li>
+        <li>
+          <strong>Twitch:</strong>
+          <a href="https://twitch.tv/indy_leo">Indy_leo</a>
+        </li>
+        <li>
+          <strong>YouTube:</strong>
+          <a href="https://youtube.com/@Indy_leo">Indy_leo</a>
+        </li>
+        <li><strong>GitHub:</strong> You're already here :)</li>
+      </ul>
+      <p>Also on GitLab for bigger projects — ask if you're curious.</p>
+    </section>
+
+    <footer>
+      <p>Thanks for stopping by — check out my repos or just say hi!</p>
+    </footer>
   </body>
 </html>
