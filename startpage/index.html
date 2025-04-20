@@ -65,11 +65,21 @@
         background-color: var(--nord2);
       }
 
+      .quicklines-box {
+        background-color: var(--nord1);
+        border: 2px solid var(--nord3);
+        border-radius: 12px;
+        padding: 2rem;
+        margin-top: 3rem;
+        max-width: 800px;
+        width: 90%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
       .links {
         display: flex;
         flex-wrap: wrap;
         gap: 2rem;
-        margin-top: 3rem;
         justify-content: center;
       }
 
@@ -95,7 +105,7 @@
     </style>
   </head>
   <body>
-    <h1>Home</h1>
+    <h1>Home Page</h1>
     <h2 id="datetime"></h2>
 
     <div class="search-bar">
@@ -104,31 +114,183 @@
       </form>
     </div>
 
-    <div class="links">
-      <div class="category">
-        <h3>Work</h3>
-        <a href="https://github.com">GitHub</a>
-        <a href="https://gitlab.com">GitLab</a>
-        <a href="https://stackoverflow.com">Stack Overflow</a>
-        <a href="https://mail.google.com/mail/u/0/#inbox">Gmail</a>
-        <a href="https://mail.proton.me/u/0/inbox">ProtonMail</a>
-        <a href="https://outlook.live.com/mail/0/">Outlook</a>
-      </div>
-      <div class="category">
-        <h3>Media</h3>
-        <a href="https://youtube.com">YouTube</a>
-        <a href="https://twitch.tv">Twitch</a>
-        <a href="https://www.reddit.com/">Reddit</a>
-        <a href="https://discord.com/channels/@me">Discord</a>
-      </div>
-      <div class="category">
-        <h3>Tools</h3>
-        <a href="https://chat.openai.com">ChatGPT</a>
-        <a href="https://www.deepl.com/en/translator">DeepL</a>
-        <a href="https://archive.org">Internet Archive</a>
-        <a href="https://terminal.sexy">Terminal Sexy</a>
+    <div class="quicklines-box">
+      <div class="links">
+        <div class="category">
+          <h3>Work</h3>
+          <a href="https://github.com">
+            <img
+              src="https://www.google.com/s2/favicons?sz=64&domain=github.com"
+              width="16"
+              height="16"
+            />
+            GitHub
+          </a>
+          <a href="https://gitlab.com">
+            <img
+              src="https://www.google.com/s2/favicons?sz=64&domain=gitlab.com"
+              width="16"
+              height="16"
+            />
+            GitLab
+          </a>
+          <a href="https://stackoverflow.com">
+            <img
+              src="https://www.google.com/s2/favicons?sz=64&domain=stackoverflow.com"
+              width="16"
+              height="16"
+            />
+            Stack Overflow
+          </a>
+          <a href="https://mail.google.com/mail/u/0/#inbox">
+            <img
+              src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico"
+              width="16"
+              height="16"
+            />
+            Gmail
+          </a>
+          <a href="https://mail.proton.me/u/0/inbox">
+            <img
+              src="https://www.google.com/s2/favicons?sz=64&domain=protonmail.com"
+              width="16"
+              height="16"
+            />
+            ProtonMail
+          </a>
+          <a href="https://outlook.live.com/mail/0/">
+            <img
+              src="https://www.google.com/s2/favicons?sz=64&domain=outlook.live.com"
+              width="16"
+              height="16"
+            />
+            Outlook
+          </a>
+        </div>
+        <div class="category">
+          <h3>Media</h3>
+          <a href="https://youtube.com">
+            <img
+              src="https://www.google.com/s2/favicons?sz=64&domain=youtube.com"
+              width="16"
+              height="16"
+            />
+            YouTube
+          </a>
+          <a href="https://twitch.tv">
+            <img
+              src="https://www.google.com/s2/favicons?sz=64&domain=twitch.tv"
+              width="16"
+              height="16"
+            />
+            Twitch
+          </a>
+          <a href="https://www.reddit.com/">
+            <img
+              src="https://www.google.com/s2/favicons?sz=64&domain=reddit.com"
+              width="16"
+              height="16"
+            />
+            Reddit
+          </a>
+          <a href="https://discord.com/channels/@me">
+            <img
+              src="https://www.google.com/s2/favicons?sz=64&domain=discord.com"
+              width="16"
+              height="16"
+            />
+            Discord
+          </a>
+        </div>
+        <div class="category">
+          <h3>Tools</h3>
+          <a href="https://chat.openai.com">
+            <img
+              src="https://www.google.com/s2/favicons?sz=64&domain=chat.openai.com"
+              width="16"
+              height="16"
+            />
+            ChatGPT
+          </a>
+          <a href="https://www.deepl.com/en/translator">
+            <img
+              src="https://www.google.com/s2/favicons?sz=64&domain=deepl.com"
+              width="16"
+              height="16"
+            />
+            DeepL
+          </a>
+          <a href="https://archive.org">
+            <img
+              src="https://www.google.com/s2/favicons?sz=64&domain=archive.org"
+              width="16"
+              height="16"
+            />
+            Internet Archive
+          </a>
+          <a href="https://terminal.sexy">
+            <img
+              src="https://www.google.com/s2/favicons?sz=64&domain=hackertyper.net"
+              width="16"
+              height="16"
+            />
+            Terminal Sexy
+          </a>
+        </div>
+        <div class="category">
+          <h3>Projects</h3>
+          <a href="https://github.com/indyleo/Catalyst">
+            <img
+              src="https://www.google.com/s2/favicons?sz=64&domain=github.com"
+              width="16"
+              height="16"
+            />
+            Catalyst
+          </a>
+          <a href="https://github.com/indyleo/dotfiles-stow">
+            <img
+              src="https://www.google.com/s2/favicons?sz=64&domain=github.com"
+              width="16"
+              height="16"
+            />
+            Dotfiles
+          </a>
+          <a href="https://github.com/indyleo/suckless">
+            <img
+              src="https://www.google.com/s2/favicons?sz=64&domain=github.com"
+              width="16"
+              height="16"
+            />
+            Suckless Tools
+          </a>
+          <a href="https://github.com/indyleo/scripts">
+            <img
+              src="https://www.google.com/s2/favicons?sz=64&domain=github.com"
+              width="16"
+              height="16"
+            />
+            Tool Scripts
+          </a>
+          <a href="https://github.com/indyleo/WindowsStuff">
+            <img
+              src="https://www.google.com/s2/favicons?sz=64&domain=github.com"
+              width="16"
+              height="16"
+            />
+            My Windows Setup
+          </a>
+          <a href="https://github.com/indyleo/portfilio">
+            <img
+              src="https://www.google.com/s2/favicons?sz=64&domain=github.com"
+              width="16"
+              height="16"
+            />
+            Portfolio
+          </a>
+        </div>
       </div>
     </div>
+
     <script>
       function updateDateTime() {
         const now = new Date();
@@ -149,7 +311,7 @@
       }
 
       updateDateTime();
-      setInterval(updateDateTime, 60000); // update every minute
+      setInterval(updateDateTime, 60000);
     </script>
   </body>
 </html>
