@@ -39,15 +39,39 @@
       }
 
       h1 {
-        font-size: 3rem;
-        color: var(--nord8);
-        margin-bottom: 0.2em;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: var(--nord0);
+        color: var(--nord4);
+        border: 2px solid var(--nord7);
+        border-radius: 8px;
+        display: inline-block;
+      }
+
+      form {
+        border: 2px solid var(--nord7);
+        padding: 10px;
+        border-radius: 8px;
+        display: inline-block;
+        background-color: var(--nord0);
       }
 
       h2 {
         font-size: 1.3rem;
         color: var(--nord4);
         margin-bottom: 2rem;
+      }
+
+      #datetime {
+        font-size: 1.2rem;
+        color: var(--nord4);
+        padding: 8px 12px;
+        margin-top: 0;
+        background-color: var(--nord0);
+        border: 2px solid var(--nord7);
+        border-radius: 8px;
+        display: inline-block;
       }
 
       .search-bar input {
@@ -66,8 +90,8 @@
       }
 
       .quicklines-box {
-        background-color: var(--nord1);
-        border: 2px solid var(--nord3);
+        background-color: var(--nord0);
+        border: 2px solid var(--nord7);
         border-radius: 12px;
         padding: 2rem;
         margin-top: 3rem;
@@ -102,9 +126,20 @@
       .category a:hover {
         color: var(--nord8);
       }
+
+      #matrix-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: var(--nord0);
+      }
     </style>
   </head>
   <body>
+    <canvas id="matrix-canvas"></canvas>
     <h1>Home Page</h1>
     <h2 id="datetime"></h2>
 
@@ -119,172 +154,92 @@
         <div class="category">
           <h3>Work</h3>
           <a href="https://github.com">
-            <img
-              src="favicons/github.ico"
-              width="16"
-              height="16"
-            />
+            <img src="favicons/github.ico" width="16" height="16" />
             GitHub
           </a>
           <a href="https://gitlab.com">
-            <img
-              src="favicons/gitlab.ico"
-              width="16"
-              height="16"
-            />
+            <img src="favicons/gitlab.ico" width="16" height="16" />
             GitLab
           </a>
           <a href="https://stackoverflow.com">
-            <img
-              src="favicons/stackoverflow.ico"
-              width="16"
-              height="16"
-            />
+            <img src="favicons/stackoverflow.ico" width="16" height="16" />
             Stack Overflow
           </a>
           <a href="https://mail.google.com/mail/u/0/#inbox">
-            <img
-              src="favicons/gmail.ico"
-              width="16"
-              height="16"
-            />
+            <img src="favicons/gmail.ico" width="16" height="16" />
             Gmail
           </a>
           <a href="https://mail.proton.me/u/0/inbox">
-            <img
-              src="favicons/protonmail.ico"
-              width="16"
-              height="16"
-            />
+            <img src="favicons/protonmail.ico" width="16" height="16" />
             ProtonMail
           </a>
           <a href="https://outlook.live.com/mail/0/">
-            <img
-              src="favicons/outlook.ico"
-              width="16"
-              height="16"
-            />
+            <img src="favicons/outlook.ico" width="16" height="16" />
             Outlook
           </a>
         </div>
         <div class="category">
           <h3>Media</h3>
           <a href="https://youtube.com">
-            <img
-              src="favicons/youtube.ico"
-              width="16"
-              height="16"
-            />
+            <img src="favicons/youtube.ico" width="16" height="16" />
             YouTube
           </a>
           <a href="https://twitch.tv">
-            <img
-              src="favicons/twitch.ico"
-              width="16"
-              height="16"
-            />
+            <img src="favicons/twitch.ico" width="16" height="16" />
             Twitch
           </a>
           <a href="https://www.reddit.com/">
-            <img
-              src="favicons/reddit.ico"
-              width="16"
-              height="16"
-            />
+            <img src="favicons/reddit.ico" width="16" height="16" />
             Reddit
           </a>
           <a href="https://discord.com/channels/@me">
-            <img
-              src="favicons/discord.ico"
-              width="16"
-              height="16"
-            />
+            <img src="favicons/discord.ico" width="16" height="16" />
             Discord
           </a>
         </div>
         <div class="category">
           <h3>Tools</h3>
           <a href="https://chat.openai.com">
-            <img
-              src="favicons/chatgpt.ico"
-              width="16"
-              height="16"
-            />
+            <img src="favicons/chatgpt.ico" width="16" height="16" />
             ChatGPT
           </a>
           <a href="https://www.deepl.com/en/translator">
-            <img
-              src="favicons/deepl.ico"
-              width="16"
-              height="16"
-            />
+            <img src="favicons/deepl.ico" width="16" height="16" />
             DeepL
           </a>
           <a href="https://archive.org">
-            <img
-              src="favicons/archive.ico"
-              width="16"
-              height="16"
-            />
+            <img src="favicons/archive.ico" width="16" height="16" />
             Internet Archive
           </a>
           <a href="https://terminal.sexy">
-            <img
-              src="favicons/hackertype.ico"
-              width="16"
-              height="16"
-            />
+            <img src="favicons/hackertype.ico" width="16" height="16" />
             Terminal Sexy
           </a>
         </div>
         <div class="category">
           <h3>Projects</h3>
           <a href="https://github.com/indyleo/Catalyst">
-            <img
-              src="favicons/github.ico"
-              width="16"
-              height="16"
-            />
+            <img src="favicons/github.ico" width="16" height="16" />
             Catalyst
           </a>
           <a href="https://github.com/indyleo/dotfiles-stow">
-            <img
-              src="favicons/github.ico"
-              width="16"
-              height="16"
-            />
+            <img src="favicons/github.ico" width="16" height="16" />
             Dotfiles
           </a>
           <a href="https://github.com/indyleo/suckless">
-            <img
-              src="favicons/github.ico"
-              width="16"
-              height="16"
-            />
+            <img src="favicons/github.ico" width="16" height="16" />
             Suckless Tools
           </a>
           <a href="https://github.com/indyleo/scripts">
-            <img
-              src="favicons/github.ico"
-              width="16"
-              height="16"
-            />
+            <img src="favicons/github.ico" width="16" height="16" />
             Tool Scripts
           </a>
           <a href="https://github.com/indyleo/WindowsStuff">
-            <img
-              src="favicons/github.ico"
-              width="16"
-              height="16"
-            />
+            <img src="favicons/github.ico" width="16" height="16" />
             My Windows Setup
           </a>
           <a href="https://github.com/indyleo/portfilio">
-            <img
-              src="favicons/github.ico"
-              width="16"
-              height="16"
-            />
+            <img src="favicons/github.ico" width="16" height="16" />
             Portfolio
           </a>
         </div>
@@ -292,6 +247,48 @@
     </div>
 
     <script>
+      const canvas = document.getElementById("matrix-canvas");
+      const ctx = canvas.getContext("2d");
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const letters =
+        "アァイィウヴエェオカガキギクグケゲコゴサザシジスズセゼソゾタダチッヂヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモヤユヨラリルレロワヲンABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+      const fontSize = 14;
+      const columns = canvas.width / fontSize;
+      const drops = Array(Math.floor(columns)).fill(1);
+
+      function drawMatrix() {
+        ctx.fillStyle = "rgba(67, 76, 94, 0.1)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = "#a3be8c"; // Matrix green
+        ctx.font = `${fontSize}px monospace`;
+
+        for (let i = 0; i < drops.length; i++) {
+          const text = letters.charAt(
+            Math.floor(Math.random() * letters.length),
+          );
+          ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+          if (drops[i] * fontSize > canvas.height || Math.random() > 0.975) {
+            drops[i] = 0;
+          }
+
+          drops[i]++;
+        }
+      }
+
+      setInterval(drawMatrix, 50);
+
+      // Responsive canvas
+      window.addEventListener("resize", () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        drops.length = Math.floor(canvas.width / fontSize);
+        drops.fill(1);
+      });
       function updateDateTime() {
         const now = new Date();
         const date = now.toLocaleDateString(undefined, {
