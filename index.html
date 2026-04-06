@@ -28,34 +28,15 @@
             <span class="dot yellow"></span>
             <span class="dot green"></span>
             <span class="terminal-title">indyleo@arch ~ $</span>
+            <button
+              class="copy-btn"
+              id="copy-btn"
+              aria-label="Copy terminal contents"
+            >
+              copy
+            </button>
           </div>
-          <pre><code><span class="cmd">$ whoami</span>
-indyleo
-
-<span class="cmd">$ uname -a</span>
-Linux-first (Arch/Debian), also works with Windows
-
-<span class="cmd">$ cat ~/languages.txt</span>
-<span class="comment"># Compiled</span>
-<span class="val">Go  Rust  C  C++  Zig  Asm x86_64</span>
-<span class="comment"># Scripting</span>
-<span class="val">Shell  PowerShell</span>
-<span class="comment"># Web</span>
-<span class="val">JavaScript  TypeScript  HTML  CSS</span>
-<span class="comment"># Interpreted</span>
-<span class="val">Python  Lua</span>
-<span class="comment"># Build Systems</span>
-<span class="val">Make  CMake  Just</span>
-<span class="comment"># Misc</span>
-<span class="val">Ino/Arduino</span>
-<span class="comment"># Misc</span>
-<span class="val">Markdown  Vim</span>
-
-<span class="cmd">$ echo $INTERESTS</span>
-Keyboards, workflows, tools, home servers, and AI
-
-<span class="cmd">$ dotfiles &gt; everything.txt</span>
-true<span class="cursor"></span></code></pre>
+          <pre id="term-output"><code id="term-code"></code></pre>
         </div>
       </section>
 
@@ -165,11 +146,16 @@ true<span class="cursor"></span></code></pre>
         <p class="gitlab-note">
           Also on GitLab for bigger projects — ask if you're curious.
         </p>
+        <p class="uses-note">
+          Curious what I run? <a href="uses.html">Check my /uses →</a>
+        </p>
       </section>
     </main>
 
     <footer>
       <p>Thanks for stopping by — check out my repos or just say hi!</p>
     </footer>
+
+    <script src="terminal.js"></script>
   </body>
 </html>

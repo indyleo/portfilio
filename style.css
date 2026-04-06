@@ -122,16 +122,45 @@ section {
   font-size: 0.72rem;
   color: var(--fg-muted);
   margin-left: 0.5rem;
+  flex: 1;
 }
 
-.terminal-box pre {
+/* Copy button */
+.copy-btn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--fg-muted);
+  font-family: inherit;
+  font-size: 0.68rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: auto;
+  transition:
+    color 0.15s,
+    border-color 0.15s;
+  letter-spacing: 0.05em;
+}
+
+.copy-btn:hover {
+  color: var(--accent3);
+  border-color: var(--accent3);
+}
+
+.copy-btn.copied {
+  color: var(--accent3);
+  border-color: var(--accent3);
+}
+
+#term-output {
   padding: 1.2rem 1.4rem;
   overflow-x: auto;
   font-size: 0.85rem;
   line-height: 1.8;
+  min-height: 6rem;
 }
 
-.terminal-box code {
+#term-output code {
   color: var(--fg);
 }
 
@@ -254,6 +283,95 @@ section {
   color: var(--fg-muted);
 }
 
+.uses-note {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--fg-muted);
+}
+
+/* ----------------- /uses page ----------------- */
+.uses-section {
+  margin-bottom: 2.5rem;
+}
+
+.uses-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.uses-table tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.uses-table tr:last-child {
+  border-bottom: none;
+}
+
+.uses-table td {
+  padding: 0.55rem 0.5rem;
+  vertical-align: top;
+}
+
+.uses-table td:first-child {
+  color: var(--fg-muted);
+  min-width: 130px;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  padding-right: 1.5rem;
+}
+
+.uses-table td:last-child {
+  color: var(--fg);
+}
+
+.uses-table td:last-child a {
+  color: var(--accent2);
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-size: 0.8rem;
+  color: var(--fg-muted);
+}
+
+.back-link:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* ----------------- 404 page ----------------- */
+.error-box {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.error-code {
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--red);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.error-msg {
+  color: var(--fg-muted);
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.error-home {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: var(--accent2);
+  font-size: 0.85rem;
+}
+
+.error-home:hover {
+  color: var(--accent);
+}
+
 /* ----------------- Footer ----------------- */
 footer {
   margin-top: 4rem;
@@ -276,5 +394,9 @@ footer {
 
   .project-list {
     grid-template-columns: 1fr;
+  }
+
+  .uses-table td:first-child {
+    min-width: 100px;
   }
 }

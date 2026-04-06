@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — not found</title>
+    <link rel="icon" href="logos/linux-64.png" type="image/png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="error-box">
+        <div
+          class="terminal-box"
+          style="max-width: 480px; margin: 0 auto; text-align: left"
+        >
+          <div class="terminal-bar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="terminal-title">indyleo@arch ~ $</span>
+          </div>
+          <pre
+            style="padding: 1.2rem 1.4rem; font-size: 0.85rem; line-height: 1.8"
+          ><code><span class="cmd">$ cat <span id="path-display">/this-page</span></span>
+<span style="color: var(--red);">cat: no such file or directory</span>
+
+<span class="comment"># exit code 404</span>
+
+<span class="cmd">$ ls ~/</span>
+<span class="val"><a href="index.html">index.html</a>   <a href="uses.html">uses.html</a></span>
+
+<span class="cmd">$ cd ~/<span class="cursor"></span></span></code></pre>
+        </div>
+
+        <p class="error-msg" style="margin-top: 1.5rem">
+          That page doesn't exist. Maybe it never did.
+        </p>
+        <a href="index.html" class="error-home">← take me home</a>
+      </div>
+    </main>
+
+    <script>
+      // Show the actual path that 404'd if available
+      const display = document.getElementById("path-display");
+      const p = window.location.pathname;
+      if (p && p !== "/404.html") {
+        display.textContent = p;
+      }
+    </script>
+  </body>
+</html>
