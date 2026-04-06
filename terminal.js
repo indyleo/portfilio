@@ -38,7 +38,7 @@ const LINES = [
   { type: "comment", text: "# Editor" },
   { type: "val", text: "Neovim" },
   { type: "comment", text: "# Terminal" },
-  { type: "val", text: "Kitty" },
+  { type: "val", text: "Foot" },
   { type: "blank" },
   { type: "cmd", text: "$ echo $INTERESTS" },
   { type: "output", text: "Keyboards, workflows, tools, home servers, and AI" },
