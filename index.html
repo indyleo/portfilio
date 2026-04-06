@@ -3,96 +3,173 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Indyleo — Backend Developer, Linux tinkerer, systems programmer."
+    />
     <title>Indyleo's Portfolio</title>
     <link rel="icon" href="logos/linux-64.png" type="image/png" />
     <link rel="stylesheet" href="style.css" />
-    <body>
-      <header>
+  </head>
+  <body>
+    <header>
+      <div class="header-text">
         <h1>Hi, I'm Indyleo!</h1>
         <p>Always Learning | Backend Developer | Tinkerer</p>
-        <button id="theme-toggle">Toggle Theme</button>
-      </header>
+      </div>
+    </header>
 
+    <main>
       <section id="about">
         <h2>About Me</h2>
         <div class="terminal-box">
-          <pre><code>$ whoami
+          <div class="terminal-bar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="terminal-title">indyleo@arch ~ $</span>
+          </div>
+          <pre><code><span class="cmd">$ whoami</span>
 indyleo
 
-$ uname -a
+<span class="cmd">$ uname -a</span>
 Linux-first (Arch/Debian), also works with Windows
 
-$ cat ~/languages.txt
-Go
-Python
-Lua
-Shell
-PowerShell
-Web Languages
-C/C++
-Zig
+<span class="cmd">$ cat ~/languages.txt</span>
+<span class="comment"># Compiled</span>
+<span class="val">Go  Rust  C  C++  Zig  Asm x86_64</span>
+<span class="comment"># Scripting</span>
+<span class="val">Shell  PowerShell</span>
+<span class="comment"># Web</span>
+<span class="val">JavaScript  TypeScript  HTML  CSS</span>
+<span class="comment"># Interpreted</span>
+<span class="val">Python  Lua</span>
+<span class="comment"># Build Systems</span>
+<span class="val">Make  CMake  Just</span>
+<span class="comment"># Misc</span>
+<span class="val">Ino/Arduino</span>
+<span class="comment"># Misc</span>
+<span class="val">Markdown  Vim</span>
 
-$ echo "Exploring..."
-Keyboards, workflows, tools, and home servers
+<span class="cmd">$ echo $INTERESTS</span>
+Keyboards, workflows, tools, home servers, and AI
 
-$ dotfiles > everything.txt
-true</code></pre>
+<span class="cmd">$ dotfiles &gt; everything.txt</span>
+true<span class="cursor"></span></code></pre>
         </div>
       </section>
 
       <section id="projects">
         <h2>Projects</h2>
-        <ul>
-          <li>
-            <a href="https://github.com/indyleo/Catalyst"
-              >My System Installer/Setup</a
+        <ul class="project-list">
+          <li class="project-card">
+            <a
+              href="https://github.com/indyleo/Catalyst"
+              target="_blank"
+              rel="noopener"
+              >Catalyst</a
             >
-            – Tweaked for performance and speed
-          </li>
-          <li>
-            <a href="https://github.com/indyleo/scripts">Tool Scripts</a> –
-            Shell & PowerShell scripts to simplify life
-          </li>
-          <li>
-            <a href="https://github.com/indyleo/WindowsStuff"
-              >My Windows Setup</a
+            <span class="project-desc"
+              >System installer &amp; setup — tweaked for performance and
+              speed</span
             >
-            – Customized, clean environment
+            <div class="tags">
+              <span class="tag">shell</span>
+              <span class="tag">linux</span>
+              <span class="tag">dotfiles</span>
+            </div>
           </li>
-          <li>
-            <a href="https://github.com/indyleo/Wallpapers">Wallpapers</a> –
-            Curated wallpaper collection for multiple styles
+          <li class="project-card">
+            <a
+              href="https://github.com/indyleo/scripts"
+              target="_blank"
+              rel="noopener"
+              >scripts</a
+            >
+            <span class="project-desc"
+              >Shell &amp; PowerShell utilities to automate the boring
+              stuff</span
+            >
+            <div class="tags">
+              <span class="tag">shell</span>
+              <span class="tag">powershell</span>
+            </div>
+          </li>
+          <li class="project-card">
+            <a
+              href="https://github.com/indyleo/WindowsStuff"
+              target="_blank"
+              rel="noopener"
+              >WindowsStuff</a
+            >
+            <span class="project-desc"
+              >Customized, clean Windows environment</span
+            >
+            <div class="tags">
+              <span class="tag">windows</span>
+              <span class="tag">config</span>
+            </div>
+          </li>
+          <li class="project-card">
+            <a
+              href="https://github.com/indyleo/Wallpapers"
+              target="_blank"
+              rel="noopener"
+              >Wallpapers</a
+            >
+            <span class="project-desc"
+              >Curated wallpaper collection for multiple styles</span
+            >
+            <div class="tags">
+              <span class="tag">rice</span>
+              <span class="tag">collection</span>
+            </div>
           </li>
         </ul>
       </section>
 
       <section id="connect">
         <h2>Connect With Me</h2>
-        <ul>
+        <ul class="connect-list">
           <li>
-            <strong>Reddit:</strong>
-            <a href="https://www.reddit.com/user/AnnonRU">u/AnnonRU</a>
+            <span class="connect-key">github</span
+            ><a href="https://github.com/indyleo" target="_blank" rel="noopener"
+              >indyleo</a
+            >
           </li>
           <li>
-            <strong>Twitch:</strong>
-            <a href="https://twitch.tv/indy_leo">Indy_leo</a>
+            <span class="connect-key">reddit</span
+            ><a
+              href="https://www.reddit.com/user/AnnonRU"
+              target="_blank"
+              rel="noopener"
+              >u/AnnonRU</a
+            >
           </li>
           <li>
-            <strong>YouTube:</strong>
-            <a href="https://youtube.com/@Indy_leo">Indy_leo</a>
+            <span class="connect-key">twitch</span
+            ><a href="https://twitch.tv/indy_leo" target="_blank" rel="noopener"
+              >indy_leo</a
+            >
           </li>
           <li>
-            <strong>GitHub:</strong>
-            <a href="https://github.com/indyleo">Indyleo</a>
+            <span class="connect-key">youtube</span
+            ><a
+              href="https://youtube.com/@Indy_leo"
+              target="_blank"
+              rel="noopener"
+              >@Indy_leo</a
+            >
           </li>
         </ul>
-        <p>Also on GitLab for bigger projects — ask if you're curious.</p>
+        <p class="gitlab-note">
+          Also on GitLab for bigger projects — ask if you're curious.
+        </p>
       </section>
+    </main>
 
-      <footer>
-        <p>Thanks for stopping by — check out my repos or just say hi!</p>
-      </footer>
-    </body>
-  </head>
-  <script src="theme.js"></script>
+    <footer>
+      <p>Thanks for stopping by — check out my repos or just say hi!</p>
+    </footer>
+  </body>
 </html>
