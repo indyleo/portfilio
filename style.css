@@ -1,8 +1,10 @@
-/* ----------------- Gruvbox theme ----------------- */
-:root {
+/* ----------------- Themes (set via data-theme on <html>) ----------------- */
+:root,
+:root[data-theme="gruvbox"] {
   --bg: #282828;
   --bg-alt: #1d2021;
   --bg-card: #32302f;
+  --bg-hover: #3c3836;
   --fg: #ebdbb2;
   --fg-light: #fbf1c7;
   --fg-muted: #a89984;
@@ -11,6 +13,51 @@
   --accent3: #b8bb26; /* green */
   --red: #cc241d;
   --border: #504945;
+}
+
+:root[data-theme="nord"] {
+  --bg: #2e3440;
+  --bg-alt: #242933;
+  --bg-card: #3b4252;
+  --bg-hover: #434c5e;
+  --fg: #d8dee9;
+  --fg-light: #eceff4;
+  --fg-muted: #8f9bb3;
+  --accent: #ebcb8b;
+  --accent2: #88c0d0;
+  --accent3: #a3be8c;
+  --red: #bf616a;
+  --border: #4c566a;
+}
+
+:root[data-theme="catppuccin"] {
+  --bg: #1e1e2e;
+  --bg-alt: #181825;
+  --bg-card: #313244;
+  --bg-hover: #45475a;
+  --fg: #cdd6f4;
+  --fg-light: #f5e0dc;
+  --fg-muted: #9399b2;
+  --accent: #f9e2af;
+  --accent2: #89b4fa;
+  --accent3: #a6e3a1;
+  --red: #f38ba8;
+  --border: #45475a;
+}
+
+:root[data-theme="tokyonight"] {
+  --bg: #1a1b26;
+  --bg-alt: #16161e;
+  --bg-card: #24283b;
+  --bg-hover: #2f334d;
+  --fg: #c0caf5;
+  --fg-light: #e0e6ff;
+  --fg-muted: #737aa2;
+  --accent: #e0af68;
+  --accent2: #7aa2f7;
+  --accent3: #9ece6a;
+  --red: #f7768e;
+  --border: #3b4261;
 }
 
 /* ----------------- Reset & Base ----------------- */
@@ -219,7 +266,7 @@ section {
 
 .project-card:hover {
   border-left-color: var(--accent3);
-  background: #3c3836;
+  background: var(--bg-hover);
 }
 
 .project-card a {
@@ -398,5 +445,213 @@ footer {
 
   .uses-table td:first-child {
     min-width: 100px;
+  }
+}
+
+/* ----------------- Interactive terminal ----------------- */
+.term-btn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--fg-muted);
+  font-family: inherit;
+  font-size: 0.68rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 3px;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: color 0.15s, border-color 0.15s;
+}
+.term-btn:hover,
+.term-btn:focus-visible {
+  color: var(--accent3);
+  border-color: var(--accent3);
+}
+.terminal-bar .term-btn + .copy-btn {
+  margin-left: 0.4rem;
+}
+.terminal-bar .term-btn.first {
+  margin-left: auto;
+}
+.term-prompt {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0 1.4rem 1.1rem;
+  font-size: 0.85rem;
+  cursor: text;
+}
+.term-prompt[hidden] {
+  display: none;
+}
+.term-prompt input {
+  flex: 1;
+  min-width: 0;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--fg-light);
+  font: inherit;
+  caret-color: var(--accent);
+}
+.term-hint {
+  padding: 0 1.4rem 1rem;
+  font-size: 0.7rem;
+  color: var(--fg-muted);
+}
+.term-hint[hidden] {
+  display: none;
+}
+.err {
+  color: var(--red);
+}
+#term-output a {
+  text-decoration: underline;
+}
+
+/* ----------------- Theme button ----------------- */
+.theme-btn {
+  position: fixed;
+  top: 0.8rem;
+  right: 0.8rem;
+  z-index: 10;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  color: var(--fg-muted);
+  font-family: inherit;
+  font-size: 0.68rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.theme-btn:hover,
+.theme-btn:focus-visible {
+  color: var(--accent3);
+  border-color: var(--accent3);
+}
+
+/* ----------------- Install box ----------------- */
+.install-box {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.82rem;
+}
+.install-box code {
+  flex: 1;
+  overflow-x: auto;
+  white-space: nowrap;
+  color: var(--fg);
+}
+.install-box code::before {
+  content: "$ ";
+  color: var(--accent3);
+}
+.install-note {
+  margin-top: 0.6rem;
+  font-size: 0.75rem;
+  color: var(--fg-muted);
+}
+
+/* ----------------- Live GitHub data ----------------- */
+.repo-meta {
+  font-size: 0.68rem;
+  color: var(--fg-muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.9rem;
+}
+.repo-meta:empty {
+  display: none;
+}
+.recent-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+.recent-list li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 1rem;
+  align-items: baseline;
+}
+.recent-list .desc {
+  color: var(--fg-muted);
+  font-size: 0.75rem;
+}
+
+/* ----------------- Resume ----------------- */
+.resume-actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+}
+.resume-item {
+  margin-bottom: 1rem;
+}
+.resume-item h3 {
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+.resume-item p,
+.resume-item li {
+  font-size: 0.82rem;
+  color: var(--fg);
+}
+.resume-item ul {
+  margin: 0.3rem 0 0 1.1rem;
+}
+.resume-item .when {
+  color: var(--fg-muted);
+  font-size: 0.72rem;
+}
+
+/* ----------------- uses jump nav ----------------- */
+.jump-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  margin-bottom: 2.5rem;
+  font-size: 0.78rem;
+}
+.jump-nav a::before {
+  content: "#";
+  color: var(--fg-muted);
+  margin-right: 0.15rem;
+}
+
+/* ----------------- Motion & print ----------------- */
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
+  }
+}
+
+@media print {
+  :root,
+  :root[data-theme] {
+    --bg: #fff;
+    --bg-alt: #fff;
+    --bg-card: #fff;
+    --fg: #111;
+    --fg-light: #000;
+    --fg-muted: #555;
+    --accent: #7a5900;
+    --accent2: #1d4f91;
+    --accent3: #2f5d1c;
+    --border: #bbb;
+  }
+  .theme-btn,
+  .resume-actions,
+  .back-link {
+    display: none !important;
+  }
+  body {
+    padding: 0;
   }
 }

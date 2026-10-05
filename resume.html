@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Resume — backend development, systems programming, and Linux."
+    />
+    <meta name="theme-color" content="#282828" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Resume" />
+    <meta
+      property="og:description"
+      content="Backend development, systems programming, and Linux."
+    />
+    <meta property="og:url" content="https://www.linuxlab.work/resume.html" />
+    <meta
+      property="og:image"
+      content="https://www.linuxlab.work/og-image.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Resume</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="logos/linux-64.png" type="image/png" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="theme.js"></script>
+  </head>
+  <body>
+    <a href="index.html" class="back-link">← back</a>
+
+    <header>
+      <div class="header-text">
+        <h1>Resume</h1>
+        <p>Backend Developer | Systems Programmer | Tinkerer</p>
+        <p>
+          <a href="mailto:indyleo.public@gmail.com">indyleo.public@gmail.com</a>
+        </p>
+      </div>
+    </header>
+
+    <div class="resume-actions">
+      <button class="term-btn" type="button" onclick="window.print()">
+        save as pdf
+      </button>
+    </div>
+
+    <main>
+      <section>
+        <h2>Relevant Skills</h2>
+        <ul class="resume-item">
+          <li>Computer hardware knowledge</li>
+          <li>Works well in a team environment</li>
+          <li>Low-level computer understanding</li>
+          <li>Likes to learn new things</li>
+          <li>Linux kernel contributor</li>
+          <li>Fast learner / quick understander</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Employment / Volunteer History</h2>
+
+        <div class="resume-item">
+          <h3>Volunteer — Community Project</h3>
+          <p class="when">September 2024 – October 2024</p>
+          <ul>
+            <li>
+              Helped transform a library into an airport-themed project,
+              contributing approximately 11 hours to setup, teardown, and
+              planning, followed by another 6 hours operating the project during
+              the school day.
+            </li>
+          </ul>
+        </div>
+
+        <div class="resume-item">
+          <h3>Volunteer — Community Parade</h3>
+          <p class="when">December 7, 2024</p>
+          <ul>
+            <li>Participated in a community Christmas parade.</li>
+          </ul>
+        </div>
+
+        <div class="resume-item">
+          <h3>Volunteer — Community Parade</h3>
+          <p class="when">December 14, 2024</p>
+          <ul>
+            <li>Participated in a community Christmas parade.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Awards &amp; Certificates</h2>
+        <ul class="resume-item">
+          <li>History Award — 2022–2023</li>
+          <li>Specialist High Skill Major (SHSM) — 2025–Present</li>
+          <li>DSBN Codes Competition — 1st Place</li>
+          <li>Skills Ontario Competition — 1st Place</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Extra-Curriculars</h2>
+        <ul class="resume-item">
+          <li>Cleaned and maintained computers so they could remain in use.</li>
+        </ul>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <form
+          action="mailto:indyleo.public@gmail.com"
+          method="post"
+          enctype="text/plain"
+          class="resume-item"
+        >
+          <p>
+            <label for="sender-name">Name</label><br />
+            <input id="sender-name" name="name" type="text" required />
+          </p>
+          <p>
+            <label for="sender-email">Email</label><br />
+            <input id="sender-email" name="email" type="email" required />
+          </p>
+          <p>
+            <label for="message">Message</label><br />
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </p>
+          <button class="term-btn" type="submit">send email</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="index.html">back to home</a></p>
+    </footer>
+  </body>
+</html>

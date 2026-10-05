@@ -8,7 +8,19 @@
       content="Indyleo's setup — hardware, software, and tools."
     />
     <title>Indyleo / uses</title>
+    <meta name="theme-color" content="#282828" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Indyleo / uses" />
+    <meta
+      property="og:description"
+      content="Hardware, software and tools I run day to day."
+    />
+    <meta property="og:url" content="https://www.linuxlab.work/uses.html" />
+    <meta property="og:image" content="https://www.linuxlab.work/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="logos/linux-64.png" type="image/png" />
+    <script src="theme.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -21,8 +33,33 @@
       </div>
     </header>
 
+    <nav class="jump-nav" aria-label="Sections">
+      <a href="#hardware">hardware</a>
+      <a href="#os-shell">os &amp; shell</a>
+      <a href="#desktop">desktop</a>
+      <a href="#editor-terminal">editor &amp; terminal</a>
+      <a href="#languages">languages</a>
+      <a href="#tooling">tooling</a>
+      <a href="#other">other</a>
+    </nav>
+
     <main>
-      <section class="uses-section">
+      <section class="uses-section" id="hardware">
+        <h2>Hardware</h2>
+        <table class="uses-table">
+          <tr>
+            <td>laptop</td>
+            <td>ThinkPad T470s, running Arch Linux</td>
+          </tr>
+          <!-- Add what you want listed here, e.g.:
+          <tr><td>keyboard</td><td>…</td></tr>
+          <tr><td>home server</td><td>…</td></tr>
+          <tr><td>monitor</td><td>…</td></tr>
+          -->
+        </table>
+      </section>
+
+      <section class="uses-section" id="os-shell">
         <h2>OS &amp; Shell</h2>
         <table class="uses-table">
           <tr>
@@ -60,7 +97,29 @@
         </table>
       </section>
 
-      <section class="uses-section">
+      <section class="uses-section" id="desktop">
+        <h2>Desktop</h2>
+        <table class="uses-table">
+          <tr>
+            <td>window manager</td>
+            <td>Hyprland</td>
+          </tr>
+          <tr>
+            <td>bar &amp; widgets</td>
+            <td>Quickshell</td>
+          </tr>
+          <tr>
+            <td>browser</td>
+            <td>LibreWolf</td>
+          </tr>
+          <tr>
+            <td>music</td>
+            <td>Feishin, Subsonic-Tui</td>
+          </tr>
+        </table>
+      </section>
+
+      <section class="uses-section" id="editor-terminal">
         <h2>Editor &amp; Terminal</h2>
         <table class="uses-table">
           <tr>
@@ -86,7 +145,7 @@
         </table>
       </section>
 
-      <section class="uses-section">
+      <section class="uses-section" id="languages">
         <h2>Languages I Reach For</h2>
         <table class="uses-table">
           <tr>
@@ -116,7 +175,7 @@
         </table>
       </section>
 
-      <section class="uses-section">
+      <section class="uses-section" id="tooling">
         <h2>Tooling</h2>
         <table class="uses-table">
           <tr>
@@ -130,8 +189,8 @@
         </table>
       </section>
 
-      <section class="uses-section">
-        <h2>Desk &amp; Other</h2>
+      <section class="uses-section" id="other">
+        <h2>Other</h2>
         <table class="uses-table">
           <tr>
             <td>wallpapers</td>
@@ -171,7 +230,21 @@
     </main>
 
     <footer>
-      <p>Last updated April 2026 — <a href="index.html">back to home</a></p>
+      <p>
+        Last updated <span id="updated">recently</span> —
+        <a href="index.html">back to home</a>
+      </p>
     </footer>
+
+    <script>
+      // Use the file's real modified date (GitHub Pages sends Last-Modified)
+      const d = new Date(document.lastModified);
+      if (!isNaN(d) && d.getFullYear() > 2000) {
+        document.getElementById("updated").textContent = d.toLocaleDateString(
+          "en-US",
+          { month: "long", year: "numeric" },
+        );
+      }
+    </script>
   </body>
 </html>

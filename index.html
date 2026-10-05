@@ -7,8 +7,34 @@
       name="description"
       content="Indyleo — Backend Developer, Linux tinkerer, systems programmer."
     />
+    <meta name="theme-color" content="#282828" />
+    <link rel="canonical" href="https://www.linuxlab.work/" />
+
+    <!-- Open Graph / social previews -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Indyleo" />
+    <meta property="og:title" content="Indyleo's Portfolio" />
+    <meta
+      property="og:description"
+      content="Backend developer, Linux tinkerer, systems programmer. Projects, dotfiles and the setup behind them."
+    />
+    <meta property="og:url" content="https://www.linuxlab.work/" />
+    <meta property="og:image" content="https://www.linuxlab.work/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Terminal prompt: indyleo@arch ~ $" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Indyleo's Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Backend developer, Linux tinkerer, systems programmer."
+    />
+    <meta name="twitter:image" content="https://www.linuxlab.work/og-image.png" />
+
     <title>Indyleo's Portfolio</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="logos/linux-64.png" type="image/png" />
+    <script src="theme.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -29,6 +55,14 @@
             <span class="dot green"></span>
             <span class="terminal-title">indyleo@arch ~ $</span>
             <button
+              class="term-btn"
+              id="skip-btn"
+              type="button"
+              aria-label="Skip the typing animation"
+            >
+              skip
+            </button>
+            <button
               class="copy-btn"
               id="copy-btn"
               aria-label="Copy terminal contents"
@@ -37,6 +71,20 @@
             </button>
           </div>
           <pre id="term-output"><code id="term-code"></code></pre>
+          <label class="term-prompt" id="term-prompt" hidden>
+            <span class="cmd">$</span>
+            <input
+              id="term-input"
+              type="text"
+              autocomplete="off"
+              autocapitalize="off"
+              spellcheck="false"
+              aria-label="Terminal command"
+            />
+          </label>
+          <p class="term-hint" id="term-hint" hidden>
+            type <span class="cmd">help</span> to look around. Tab completes, ↑ recalls.
+          </p>
         </div>
       </section>
 
@@ -54,6 +102,7 @@
               >System installer &amp; setup — tweaked for performance and
               speed</span
             >
+            <div class="repo-meta"></div>
             <div class="tags">
               <span class="tag">shell</span>
               <span class="tag">linux</span>
@@ -70,6 +119,7 @@
             <span class="project-desc"
               >Shell &amp; Python utilities to automate the boring stuff</span
             >
+            <div class="repo-meta"></div>
             <div class="tags">
               <span class="tag">shell</span>
               <span class="tag">python</span>
@@ -84,6 +134,7 @@
               >dotfiles-stow</a
             >
             <span class="project-desc">Customized, dotfiles for my liking</span>
+            <div class="repo-meta"></div>
             <div class="tags">
               <span class="tag">rice</span>
               <span class="tag">dotfiles</span>
@@ -100,12 +151,32 @@
             <span class="project-desc"
               >Curated wallpaper collection for multiple styles</span
             >
+            <div class="repo-meta"></div>
             <div class="tags">
               <span class="tag">rice</span>
               <span class="tag">collection</span>
             </div>
           </li>
         </ul>
+      </section>
+
+      <section id="recent" hidden>
+        <h2>Recently Updated</h2>
+        <ul class="recent-list" id="recent-list"></ul>
+      </section>
+
+      <section id="install">
+        <h2>Install Catalyst</h2>
+        <div class="install-box">
+          <code id="install-cmd">curl -fsSL https://www.linuxlab.work/linux | bash</code>
+          <button class="copy-btn" id="install-copy" type="button">copy</button>
+        </div>
+        <p class="install-note">
+          Clones <a href="https://github.com/indyleo/Catalyst" target="_blank" rel="noopener">Catalyst</a>
+          and lets you pick a branch to run or read first. Needs
+          <code>git</code> and <code>fzf</code>. Read the
+          <a href="linux">script</a> before piping anything into bash.
+        </p>
       </section>
 
       <section id="connect">
@@ -148,6 +219,9 @@
         <p class="uses-note">
           Curious what I run? <a href="uses.html">Check my /uses →</a>
         </p>
+        <p class="uses-note">
+          Want the short version? <a href="resume.html">Read my resume →</a>
+        </p>
       </section>
     </main>
 
@@ -155,6 +229,7 @@
       <p>Thanks for stopping by — check out my repos or just say hi!</p>
     </footer>
 
+    <script src="github.js"></script>
     <script src="terminal.js"></script>
   </body>
 </html>
