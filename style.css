@@ -1,6 +1,11 @@
 /* ----------------- Themes (set via data-theme on <html>) ----------------- */
 :root,
 :root[data-theme="gruvbox"] {
+  /* Tells the browser to render native widgets (autofill, scrollbars,
+     form controls) in dark mode. Every theme here is dark; if you ever
+     add a light one, set `color-scheme: light` in its block. */
+  color-scheme: dark;
+
   --bg: #282828;
   --bg-alt: #1d2021;
   --bg-card: #32302f;
@@ -16,6 +21,8 @@
 }
 
 :root[data-theme="nord"] {
+  color-scheme: dark;
+
   --bg: #2e3440;
   --bg-alt: #242933;
   --bg-card: #3b4252;
@@ -31,6 +38,8 @@
 }
 
 :root[data-theme="catppuccin"] {
+  color-scheme: dark;
+
   --bg: #1e1e2e;
   --bg-alt: #181825;
   --bg-card: #313244;
@@ -46,6 +55,8 @@
 }
 
 :root[data-theme="tokyonight"] {
+  color-scheme: dark;
+
   --bg: #1a1b26;
   --bg-alt: #16161e;
   --bg-card: #24283b;
@@ -87,6 +98,11 @@ a {
 a:hover {
   color: var(--accent);
   text-decoration: underline;
+}
+
+::selection {
+  background: var(--accent2);
+  color: var(--bg-alt);
 }
 
 /* ----------------- Header ----------------- */
@@ -209,6 +225,26 @@ section {
 
 #term-output code {
   color: var(--fg);
+}
+
+/* Thin themed scrollbar on the terminal output */
+#term-output {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+#term-output::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+#term-output::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+#term-output::-webkit-scrollbar-thumb:hover {
+  background: var(--fg-muted);
+}
+#term-output::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 /* Terminal syntax colors */
@@ -459,7 +495,9 @@ footer {
   border-radius: 3px;
   cursor: pointer;
   letter-spacing: 0.05em;
-  transition: color 0.15s, border-color 0.15s;
+  transition:
+    color 0.15s,
+    border-color 0.15s;
 }
 .term-btn:hover,
 .term-btn:focus-visible {
@@ -492,6 +530,10 @@ footer {
   color: var(--fg-light);
   font: inherit;
   caret-color: var(--accent);
+}
+/* Brighten the "$" while the prompt has focus */
+.term-prompt:focus-within span.cmd {
+  color: var(--fg-light);
 }
 .term-hint {
   padding: 0 1.4rem 1rem;
@@ -611,6 +653,79 @@ footer {
   font-size: 0.72rem;
 }
 
+/* ----------------- Form fields ----------------- */
+/* Scoped to .resume-item on purpose: a bare `input` selector would
+   override .term-prompt input and break the live terminal. */
+.resume-item label {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-bottom: 0.3rem;
+}
+
+/* "$ " prompt before each label, so the form reads like a shell */
+.resume-item label::before {
+  content: "$ ";
+  color: var(--accent3);
+}
+
+.resume-item input,
+.resume-item textarea {
+  font: inherit;
+  width: 100%;
+  max-width: 26rem;
+  padding: 0.45rem 0.7rem;
+  color: var(--fg-light);
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  outline: none;
+  caret-color: var(--accent);
+  appearance: none;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s,
+    background 0.15s;
+}
+
+.resume-item textarea {
+  max-width: 100%;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.resume-item input::placeholder,
+.resume-item textarea::placeholder {
+  color: var(--fg-muted);
+  opacity: 0.65;
+}
+
+.resume-item input:hover,
+.resume-item textarea:hover {
+  border-color: var(--fg-muted);
+}
+
+.resume-item input:focus,
+.resume-item textarea:focus {
+  background: var(--bg-card);
+  border-color: var(--accent3);
+  /* fallback, then a real accent glow where supported */
+  box-shadow: 0 0 0 3px var(--bg-hover);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent3) 25%, transparent);
+}
+
+/* Kill Chrome's yellow autofill background */
+.resume-item input:-webkit-autofill,
+.resume-item input:-webkit-autofill:hover,
+.resume-item input:-webkit-autofill:focus,
+.resume-item textarea:-webkit-autofill {
+  -webkit-text-fill-color: var(--fg-light);
+  -webkit-box-shadow: 0 0 0 1000px var(--bg-alt) inset;
+  transition: background-color 9999s ease-out;
+}
+
 /* ----------------- uses jump nav ----------------- */
 .jump-nav {
   display: flex;
@@ -653,5 +768,16 @@ footer {
   }
   body {
     padding: 0;
+  }
+  /* Put the form fields back to a light, printable look */
+  .resume-item input,
+  .resume-item textarea {
+    background: #fff;
+    color: #111;
+    border-color: #bbb;
+    box-shadow: none;
+  }
+  .resume-item label::before {
+    content: "";
   }
 }
