@@ -6,7 +6,7 @@ Live at [www.linuxlab.work](https://www.linuxlab.work).
 ## Features
 
 - **Interactive terminal.** After the intro animation, type commands
-  (`help`, `ls`, `cat about.txt`, `projects`, `github`, `install`,
+  (`help`, `ls`, `cat about.txt`, `projects [tag]`, `github`, `install`,
   `theme nord`, `neofetch`, `cd uses`). Tab completes, up/down recalls history.
   There are a few easter eggs too.
 - **Skip button.** Skips the typing animation. It is skipped automatically

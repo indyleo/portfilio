@@ -194,7 +194,7 @@ const COMMANDS = {
     `<span class="cmd">help</span>              this list`,
     `<span class="cmd">ls</span>                list files`,
     `<span class="cmd">cat &lt;file&gt;</span>       read a file (try <span class="val">about.txt</span>)`,
-    `<span class="cmd">projects</span>          what I've built`,
+    `<span class="cmd">projects [tag]</span>   what I've built; filter by tag`,
     `<span class="cmd">github</span>            recently updated repos (live)`,
     `<span class="cmd">install</span>           the Catalyst one-liner`,
     `<span class="cmd">cd uses|resume</span>    open a page`,
@@ -206,27 +206,51 @@ const COMMANDS = {
   pwd: () => ["/home/indyleo"],
   date: () => [new Date().toString()],
   ls: () => [`<span class="val">${FILES.join("   ")}</span>`],
-  projects: () => {
+  projects: (tag = "") => {
     const cards = [...document.querySelectorAll(".project-card")];
-    return cards.map((c) => {
+    const wanted = tag.trim().toLowerCase();
+    const filtered = wanted
+      ? cards.filter((c) =>
+          [...c.querySelectorAll(".tag")].some(
+            (t) => t.textContent.trim().toLowerCase() === wanted,
+          ),
+        )
+      : cards;
+
+    if (!filtered.length) {
+      return [
+        wanted
+          ? `<span class="comment">no projects found with tag "${esc(wanted)}"</span>`
+          : `<span class="comment">no projects found</span>`,
+      ];
+    }
+
+    return filtered.map((c) => {
       const a = c.querySelector("a");
       const d = c.querySelector(".project-desc").textContent.trim();
-      return `${link(a.href, a.textContent.trim(), true)}  <span class="comment"># ${esc(d)}</span>`;
+      const tags = [...c.querySelectorAll(".tag")]
+        .map((t) => t.textContent.trim())
+        .join(", ");
+      return `${link(a.href, a.textContent.trim(), true)}  <span class="comment"># ${esc(d)} [${esc(tags)}]</span>`;
     });
   },
   install: () => [
     `<span class="comment"># clones Catalyst and lets you pick a branch with fzf (needs git + fzf)</span>`,
     `<span class="val">${esc(INSTALL_CMD)}</span>`,
   ],
-  neofetch: () => [
-    `<span class="val">indyleo</span>@<span class="val">arch</span>`,
-    `---------------`,
-    `<span class="cmd">OS</span>:       Arch Linux (btw)`,
-    `<span class="cmd">Shell</span>:    zsh + starship`,
-    `<span class="cmd">Editor</span>:   Neovim`,
-    `<span class="cmd">Terminal</span>: Alacritty`,
-    `<span class="cmd">Theme</span>:    ${esc(document.documentElement.getAttribute("data-theme"))}`,
-  ],
+  neofetch: async () => {
+    const repoCount = await (window.ghRepoCount || Promise.resolve(null));
+    return [
+      `<span class="val">indyleo</span>@<span class="val">arch</span>`,
+      `---------------`,
+      `<span class="cmd">OS</span>:       Arch Linux (btw)`,
+      `<span class="cmd">Shell</span>:    zsh + starship`,
+      `<span class="cmd">Editor</span>:   Neovim`,
+      `<span class="cmd">Terminal</span>: Alacritty`,
+      `<span class="cmd">Theme</span>:    ${esc(document.documentElement.getAttribute("data-theme"))}`,
+      `<span class="cmd">Repos</span>:    ${repoCount === null ? "unavailable" : repoCount + " (live)"}`,
+    ];
+  },
   clear: () => {
     codeEl.textContent = "";
     return [];
@@ -249,7 +273,7 @@ async function runCommand(raw) {
   if (!cmd) return;
   const [name, ...args] = cmd.split(" ");
 
-  if (COMMANDS[cmd]) return printLines(COMMANDS[cmd]());
+  if (COMMANDS[cmd]) return printLines(await COMMANDS[cmd]());
 
   switch (name) {
     case "cat": {
@@ -257,6 +281,21 @@ async function runCommand(raw) {
       if (!f) return print("usage: cat &lt;file&gt;");
       if (CAT[f]) return printLines(CAT[f]());
       return print(`<span class="err">cat: ${esc(f)}: no such file or directory</span>`);
+    }
+    case "projects": {
+      let tag = "";
+      if (args[0] === "--tag" || args[0] === "-t") {
+        tag = args[1] || "";
+      } else if (args.length) {
+        tag = args[0];
+      }
+      if (
+        args.length > 2 ||
+        ((args[0] === "--tag" || args[0] === "-t") && !args[1])
+      ) {
+        return print("usage: projects [--tag|-t] <tag>");
+      }
+      return printLines(COMMANDS.projects(tag));
     }
     case "cd": {
       const t = (args[0] || "home").replace(/^~\/?|\/$/g, "").replace(/\.html$/, "") || "home";

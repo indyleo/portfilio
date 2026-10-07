@@ -16,6 +16,14 @@ function ghAgo(iso) {
   return years + (years === 1 ? " year ago" : " years ago");
 }
 
+window.ghRepoCount = fetch(`https://api.github.com/users/${GH_USER}`)
+  .then((res) => {
+    if (!res.ok) throw new Error(res.status);
+    return res.json();
+  })
+  .then((user) => user.public_repos)
+  .catch(() => null);
+
 window.ghRepos = (async function () {
   try {
     const cached = sessionStorage.getItem(GH_KEY);
